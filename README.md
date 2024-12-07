@@ -8,6 +8,10 @@
 5. Book a Seat
 6. Get Specific Booking Details
 
+## Tech Stack: 
+Web Server: Express JS
+Database: MySQL
+
 ## Setup
 
 ### Prerequisites
@@ -21,7 +25,7 @@
 1. **Clone the repository:**
 
 2. **Navigate to the project directory:**
-   cd railway-management-system
+   cd Railway-management
 
 3. **Install dependencies:**
    npm install
@@ -44,9 +48,9 @@
 After login you get a authorization token, save it in env as USER_TOKEN.
 **Add a New Train**: curl -X POST http://localhost:3000/api/trains -H "Content-Type: application/json" -H "Authorization: Bearer ADMIN_TOKEN" -d "{\"source\": \"Dehradun\", \"destination\": \"Mumbai\", \"total_seats\": 100}"
 ADMIN_TOKEN is saved in env file. 
-seat avalibilty:curl -X GET "http://localhost:3000/api/bookings/seatsAvailability?source=CityA&destination=CityB" -H "Authorization: Bearer YOUR_USER_TOKEN_HERE"
-book a seat: curl -X POST http://localhost:3000/api/bookings/ -H "Content-Type: application/json" -H "Authorization: Bearer YOUR_USER_TOKEN_HERE" -d "{\"train_id\": 1, \"user_id\": 1}"
+**Seat avalibilty**:curl -X GET "http://localhost:3000/api/bookings/seatsAvailability?source=CityA&destination=CityB" -H "Authorization: Bearer YOUR_USER_TOKEN_HERE"
+**Book a seat**: curl -X POST http://localhost:3000/api/bookings/ -H "Content-Type: application/json" -H "Authorization: Bearer YOUR_USER_TOKEN_HERE" -d "{\"train_id\": 1, \"user_id\": 1}"
 
-get specific booking details : curl -X GET http://localhost:3000/api/bookings/123 -H "Authorization: Bearer YOUR_USER_TOKEN_HERE"
+**Get specific booking details** : curl -X GET http://localhost:3000/api/bookings/:bookingID -H "Authorization: Bearer YOUR_USER_TOKEN_HERE"
 
 
